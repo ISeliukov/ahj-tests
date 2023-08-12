@@ -1,4 +1,4 @@
-import { checkLuhn } from './Checker';
+import { Checker } from './Checker';
 import CardType from './CardType';
 
 function shadowIcons(mode, shadowclass, exclusionClass) {

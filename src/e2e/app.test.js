@@ -10,7 +10,7 @@ describe('Credit Card Validator form', () => {
   const baseUrl = 'http://localhost:9000';
 
   beforeAll(async () => {
-    server = fork(`${__dirname}/e2e.server.js`);
+    server = await fork(`${__dirname}/e2e.server.js`);
     await new Promise((resolve, reject) => {
       server.on('error', reject);
       server.on('message', (message) => {
@@ -33,7 +33,28 @@ describe('Credit Card Validator form', () => {
     server.kill();
   });
 
-  test('should add "valid" class for valid input', async () => {
+//  test('should add "valid" class for valid input', async () => {
+//      await page.goto(baseUrl);
+//      const form = await page.$('#enterform');
+//      const input = await form.$('#entercard');
+//      await input.type('5084840100137725');
+//      const submit = await form.$('#enterbutton');
+//      submit.click();
+//      await page.waitForSelector('#entercard.valid');
+//  });
+
+//  test('should add "invalid" class for invalid input', async () => {
+//      await page.goto(baseUrl);
+//      const form = await page.$('#enterform');
+//      const input = await form.$('#entercard');
+//      await input.type('5084840100137726');
+//      const submit = await form.$('#enterbutton');
+//      submit.click();
+//      await page.waitForSelector('#entercard.invalid');
+//  });
+
+  describe('Check credit card form -- valid', () => {
+    test('should add .valid class for valid card number', async () => {
       await page.goto(baseUrl);
       const form = await page.$('#enterform');
       const input = await form.$('#entercard');
@@ -41,10 +62,11 @@ describe('Credit Card Validator form', () => {
       const submit = await form.$('#enterbutton');
       submit.click();
       await page.waitForSelector('#entercard.valid');
+    });
   });
-
-  test('should add "invalid" class for invalid input', async () => {
-
+  
+  describe('Check credit card form -- invalid', () => {
+    test('should add .invalid class for invalid card number', async () => {
       await page.goto(baseUrl);
       const form = await page.$('#enterform');
       const input = await form.$('#entercard');
@@ -52,5 +74,7 @@ describe('Credit Card Validator form', () => {
       const submit = await form.$('#enterbutton');
       submit.click();
       await page.waitForSelector('#entercard.invalid');
+    });
   });
+  
 });

@@ -11,6 +11,7 @@ module.exports = {
     port: 9000,
   },
   devtool: 'source-map',
+  mode: 'development',
   // entry point for application
   entry: {
     app: path.join(__dirname, srcFolder, 'index.js'),

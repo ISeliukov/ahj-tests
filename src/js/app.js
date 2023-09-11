@@ -13,6 +13,7 @@ function shadowIcons(mode, shadowclass, exclusionClass) {
       node.classList.remove('selectedcardtype');
     } else {
       node.classList.add('selectedcardtype');
+      node.classList.remove(shadowclass);
     }
   }
 }
@@ -20,7 +21,9 @@ function shadowIcons(mode, shadowclass, exclusionClass) {
 document.getElementById('entercard').addEventListener('input', (event) => {
   const entercardTyp = document.getElementById('entercardTyp');
   const text = event.target.value;
+  console.log(event, event.target, text);
   const CardTyp = CardType(text);
+  console.log(CardTyp);
   if (CardTyp) {
     entercardTyp.innerText = CardTyp.typ;
     // entercardTyp.classList.remove('invisible');

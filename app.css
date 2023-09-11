@@ -1,0 +1,68 @@
+body {
+  background: #eee;
+  text-align: left;
+  width: 800px;
+  margin: 100px auto;
+  font-size: 24px;
+}
+.invisible {
+  display: none;
+}
+.errormsg {
+  color: red;
+}
+.successmsg {
+  color: green;
+}
+.logo-group {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto 10px 15%;
+}
+.enterform {
+  margin: 0 auto 10px 15%;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+.enterform * {
+  margin: 5px;
+}
+.sn-mir        { background-image: url(e1f8d63e3175bcb4fecc.jpg);}
+.sn-visa       { background-image: url(83235a256549ae6d43d1.png);}
+.sn-mastercard { background-image: url(095991e8802758595158.jpg);}
+.sn-maestro    { background-image: url(f260337d6c880107340e.png);}
+.sn-unionpay   { background-image: url(19f3591d2d5be3b6bbc3.jpg);}
+
+.sn-icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  background-position: center;
+  width: 48px;
+  height: 30px;
+  margin: 2px;
+}
+.sn-unselected {
+  background-color: rgba(180, 180, 180, 0.95);
+  background-blend-mode: multiply;
+  border-collapse: collapse;
+  border-radius: 3px;
+  border: solid 1px #000;
+}
+.cardtypeinfo {
+  min-height: 1.5em;
+}
+#entercard.valid {
+  background-color: #0c0;
+}
+#entercard.invalid {
+  background-color: #c00;
+}
+
+
+/*# sourceMappingURL=app.css.map*/
